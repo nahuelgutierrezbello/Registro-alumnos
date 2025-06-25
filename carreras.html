@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carreras - Instituto Profesional</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <div class="container header-container">
+          <a href="index.html" class="logo">
+            <i class="fas fa-graduation-cap logo-icon"></i>
+            <span>Instituto Profesional</span>
+          </a>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                  <i class="fas fa-users"></i> Estudiantes
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="carreras.html" class="nav-link active">
+                  <i class="fas fa-graduation-cap"></i> Carreras
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="contacto.html" class="nav-link">
+                  <i class="fas fa-map-marker-alt"></i> Contacto
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="novedades.html" class="nav-link">
+                  <i class="fas fa-newspaper"></i> Novedades
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="container">
+          <h1><i class="fas fa-graduation-cap"></i> Gestión de Carreras</h1>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Formulario para crear nueva carrera -->
+            <div class="card">
+              <div class="card-header">
+                <h2><i class="fas fa-plus-circle"></i> Crear Nueva Carrera</h2>
+              </div>
+              <div class="card-body">
+                <form id="createCareerForm">
+                  <div class="form-group">
+                    <label for="newCareerName" class="form-label">
+                      <i class="fas fa-graduation-cap"></i> Nombre de la Carrera
+                    </label>
+                    <input
+                      type="text"
+                      id="newCareerName"
+                      class="form-control"
+                      placeholder="Ej: Ingeniería en Sistemas"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="newCareerCategory" class="form-label">
+                      <i class="fas fa-tag"></i> Categoría
+                    </label>
+                    <select id="newCareerCategory" class="form-control">
+                      <option value="">Sin categoría</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Guardar Carrera
+                  </button>
+                </form>
+                <div id="createCareerResult"></div>
+              </div>
+            </div>
+
+            <!-- Formulario para crear nueva categoría -->
+            <div class="card">
+              <div class="card-header">
+                <h2><i class="fas fa-tags"></i> Crear Nueva Categoría</h2>
+              </div>
+              <div class="card-body">
+                <form id="createCategoryForm">
+                  <div class="form-group">
+                    <label for="newCategoryName" class="form-label">
+                      <i class="fas fa-tag"></i> Nombre de la Categoría
+                    </label>
+                    <input
+                      type="text"
+                      id="newCategoryName"
+                      class="form-control"
+                      placeholder="Ej: Ciencias, Ingenierías"
+                      required
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Guardar Categoría
+                  </button>
+                </form>
+                <div id="createCategoryResult"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Listado de Carreras -->
+          <div class="card mt-8">
+            <div class="card-header">
+              <h2><i class="fas fa-list"></i> Carreras Disponibles</h2>
+            </div>
+            <div class="card-body">
+              <div
+                id="careersGrid"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Listado de Categorías -->
+          <div class="card mt-8">
+            <div class="card-header">
+              <h2><i class="fas fa-tags"></i> Categorías</h2>
+            </div>
+            <div class="card-body">
+              <div
+                id="categoriesGrid"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              ></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Modal para asignar carreras -->
+      <div id="assignCareerModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3><i class="fas fa-graduation-cap"></i> Asignar Carrera</h3>
+            <button id="closeAssignCareerModal" class="close">&times;</button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="assignStudentId" />
+            <p>Estudiante: <strong id="assignStudentName"></strong></p>
+            <div class="form-group">
+              <label for="assignCareerSelect" class="form-label">
+                <i class="fas fa-graduation-cap"></i> Seleccione carrera:
+              </label>
+              <select id="assignCareerSelect" class="form-control"></select>
+            </div>
+            <div id="assignCareerMessage"></div>
+          </div>
+          <div class="modal-footer">
+            <button id="assignCareerBtn" class="btn btn-assign">
+              <i class="fas fa-check-circle"></i> Confirmar Asignación
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="social-links">
+              <a href="#" class="social-link" title="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link" title="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-link" title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link" title="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-link" title="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" class="social-link" title="TikTok"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+            </div>
+            <p>© 2025 Instituto Profesional. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

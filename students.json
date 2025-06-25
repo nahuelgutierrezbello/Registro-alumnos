@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "dihuen",
+    "career": "Tecnologías de la Información"
+  },
+  {
+    "id": 2,
+    "name": "juanma",
+    "career": "Ciencia de Datos"
+  },
+  {
+    "id": 3,
+    "name": "skaksak",
+    "career": "Ingeniería de Software"
+  },
+  {
+    "id": 4,
+    "name": "ia",
+    "career": "Ciencias de la Computación"
+  },
+  {
+    "id": 5,
+    "name": "dihuen",
+    "career": "sisiis"
+  },
+  {
+    "id": 6,
+    "name": "juan",
+    "career": "Ciencias de la Computación"
+  },
+  {
+    "id": 7,
+    "name": "lalalsla",
+    "career": "Ingeniería de Software"
+  },
+  {
+    "id": 8,
+    "name": "enzo",
+    "career": "Ciencia de Datos"
+  },
+  {
+    "id": 9,
+    "name": "pepe",
+    "career": "Ciencias de la Computación"
+  },
+  {
+    "id": 10,
+    "name": "julian",
+    "career": "Ciencias de la Computación"
+  },
+  {
+    "id": 11,
+    "name": "ia",
+    "career": "Ingeniería en Sistemas"
+  },
+  {
+    "id": 15,
+    "name": "Gonzalo",
+    "career": "No asignada"
+  },
+  {
+    "id": 16,
+    "name": "Nahuel Alejo",
+    "career": "No asignada"
+  },
+  {
+    "id": 18,
+    "name": "Juan Dufour",
+    "career": "Enfermeria"
+  },
+  {
+    "id": 20,
+    "name": "Gonzalo",
+    "career": "Enfermeria"
+  },
+  {
+    "id": 22,
+    "name": "Tiago Mcgyver",
+    "career": "Enfermeria"
+  }
+]

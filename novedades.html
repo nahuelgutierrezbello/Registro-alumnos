@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novedades - Instituto Profesional</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <div class="container header-container">
+          <a href="index.html" class="logo">
+            <i class="fas fa-graduation-cap logo-icon"></i>
+            <span>Instituto Profesional</span>
+          </a>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                  <i class="fas fa-users"></i> Estudiantes
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="carreras.html" class="nav-link">
+                  <i class="fas fa-graduation-cap"></i> Carreras
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="contacto.html" class="nav-link">
+                  <i class="fas fa-map-marker-alt"></i> Contacto
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="novedades.html" class="nav-link active">
+                  <i class="fas fa-newspaper"></i> Novedades
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="container">
+          <!-- Carrusel de novedades -->
+          <div class="slider animate-fade-in">
+            <div class="slide active">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+                alt="Nuevo laboratorio"
+              />
+              <div class="slide-content">
+                <h3>Inauguración del nuevo laboratorio de tecnología</h3>
+                <p>
+                  Equipado con la última tecnología para nuestros estudiantes de
+                  carreras tecnológicas.
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <img
+                src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+                alt="Convenio empresarial"
+              />
+              <div class="slide-content">
+                <h3>Convenio con empresas líderes del sector</h3>
+                <p>
+                  Facilitamos prácticas profesionales con las mejores empresas
+                  de la industria.
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Nueva carrera"
+              />
+              <div class="slide-content">
+                <h3>Nueva carrera: Inteligencia Artificial</h3>
+                <p>
+                  Plan de estudios actualizado para formar a los profesionales
+                  del futuro.
+                </p>
+              </div>
+            </div>
+            <div class="slider-nav">
+              <button class="slider-btn prev">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="slider-btn next">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <div class="slider-dots">
+              <button class="slider-btn active"></button>
+              <button class="slider-btn"></button>
+              <button class="slider-btn"></button>
+            </div>
+          </div>
+
+          <div class="card animate-fade-in">
+            <div class="card-header">
+              <h1><i class="fas fa-newspaper"></i> Novedades</h1>
+            </div>
+            <div class="card-body">
+              <div class="news-events-container">
+                <!-- Listado de Novedades -->
+                <div class="news-section">
+                  <div class="card floating-card">
+                    <div class="card-header">
+                      <h2><i class="fas fa-bullhorn"></i> Últimas Noticias</h2>
+                    </div>
+                    <div class="card-body">
+                      <div class="space-y-6">
+                        <!-- Noticia 1 -->
+                        <div class="news-item">
+                          <img
+                            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+                            alt="Nuevo laboratorio"
+                            class="news-image"
+                          />
+                          <div class="news-content">
+                            <div class="news-date">
+                              <i class="fas fa-calendar-alt"></i> 15 Mayo 2025
+                            </div>
+                            <h3>
+                              Inauguración del nuevo laboratorio de tecnología
+                            </h3>
+                            <p>
+                              Estamos orgullosos de anunciar la apertura de
+                              nuestro nuevo laboratorio equipado con la última
+                              tecnología para nuestros estudiantes de carreras
+                              tecnológicas. El espacio cuenta con equipos de
+                              última generación y capacidad para 50 estudiantes
+                              simultáneamente.
+                            </p>
+                            <div class="news-tags">
+                              <span class="news-tag">Tecnología</span>
+                              <span class="news-tag">Infraestructura</span>
+                              <span class="news-tag">Innovación</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Noticia 2 -->
+                        <div class="news-item">
+                          <img
+                            src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+                            alt="Convenio empresarial"
+                            class="news-image"
+                          />
+                          <div class="news-content">
+                            <div class="news-date">
+                              <i class="fas fa-calendar-alt"></i> 3 Mayo 2025
+                            </div>
+                            <h3>Convenio con empresas líderes del sector</h3>
+                            <p>
+                              Hemos firmado acuerdos con varias empresas para
+                              facilitar las prácticas profesionales de nuestros
+                              estudiantes. Entre las empresas participantes se
+                              encuentran TechSolutions, DataCorp y
+                              FutureSystems, líderes en sus respectivos campos.
+                            </p>
+                            <div class="news-tags">
+                              <span class="news-tag">Empleabilidad</span>
+                              <span class="news-tag">Empresas</span>
+                              <span class="news-tag">Prácticas</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Eventos Próximos -->
+                <div class="events-section">
+                  <div class="card floating-card">
+                    <div class="card-header">
+                      <h2>
+                        <i class="fas fa-calendar-check"></i> Próximos Eventos
+                      </h2>
+                    </div>
+                    <div class="card-body">
+                      <div class="compact-events-grid">
+                        <!-- Evento 1 -->
+                        <div class="compact-event">
+                          <div class="compact-event-image">
+                            <img
+                              src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1412&q=80"
+                              alt="Charla tecnología"
+                            />
+                          </div>
+                          <div class="compact-event-details">
+                            <div class="compact-event-date">
+                              <i class="fas fa-calendar-day"></i> 25 Mayo 2025,
+                              10:00
+                            </div>
+                            <h3>Charla: El futuro del trabajo en tecnología</h3>
+                            <div class="compact-event-meta">
+                              <span
+                                ><i class="fas fa-map-marker-alt"></i> Auditorio
+                                Principal</span
+                              >
+                              <span><i class="fas fa-clock"></i> 2 horas</span>
+                              <span
+                                ><i class="fas fa-user"></i> Ing. Santiago
+                                Chiale</span
+                              >
+                            </div>
+                            <div class="compact-event-actions">
+                              <button class="btn-event-action">
+                                <i class="fas fa-info-circle"></i> Más info
+                              </button>
+                              <button class="btn-event-register">
+                                <i class="fas fa-user-plus"></i> Inscribirse
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Evento 2 -->
+                        <div class="compact-event">
+                          <div class="compact-event-image">
+                            <img
+                              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+                              alt="Taller CV"
+                            />
+                          </div>
+                          <div class="compact-event-details">
+                            <div class="compact-event-date">
+                              <i class="fas fa-calendar-day"></i> 1 Junio 2025,
+                              14:00
+                            </div>
+                            <h3>Taller de Analisis Matematico</h3>
+                            <div class="compact-event-meta">
+                              <span
+                                ><i class="fas fa-map-marker-alt"></i> Sala
+                                302</span
+                              >
+                              <span><i class="fas fa-clock"></i> 3 horas</span>
+                              <span
+                                ><i class="fas fa-user"></i> Prof.Sol
+                                Retola</span
+                              >
+                            </div>
+                            <div class="compact-event-actions">
+                              <button class="btn-event-action">
+                                <i class="fas fa-info-circle"></i> Más info
+                              </button>
+                              <button class="btn-event-register">
+                                <i class="fas fa-user-plus"></i> Inscribirse
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="social-links">
+              <a href="#" class="social-link" title="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link" title="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-link" title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link" title="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-link" title="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" class="social-link" title="TikTok"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+            </div>
+            <p>© 2025 Instituto Profesional. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

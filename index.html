@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestor Académico - Instituto Profesional</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <div class="container header-container">
+          <a href="index.html" class="logo">
+            <i class="fas fa-graduation-cap logo-icon"></i>
+            <span>Instituto Profesional</span>
+          </a>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link active">
+                  <i class="fas fa-users"></i> Estudiantes
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="carreras.html" class="nav-link">
+                  <i class="fas fa-graduation-cap"></i> Carreras
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="contacto.html" class="nav-link">
+                  <i class="fas fa-map-marker-alt"></i> Contacto
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="novedades.html" class="nav-link">
+                  <i class="fas fa-newspaper"></i> Novedades
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="container">
+          <div class="card animate-fade-in">
+            <div class="card-header">
+              <h1>
+                <i class="fas fa-user-graduate"></i> Gestión de Estudiantes
+              </h1>
+            </div>
+            <div class="card-body">
+              <div class="grid grid-cols-1 gap-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h2>
+                      <i class="fas fa-user-plus"></i> Registrar Estudiante
+                    </h2>
+                  </div>
+                  <div class="card-body">
+                    <form id="registerForm">
+                      <div class="form-group">
+                        <label for="registerName" class="form-label">
+                          <i class="fas fa-id-card"></i> Nombre Completo
+                        </label>
+                        <input
+                          type="text"
+                          id="registerName"
+                          class="form-control"
+                          placeholder="Ej: María González Pérez"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="registerCareer" class="form-label">
+                          <i class="fas fa-graduation-cap"></i> Carrera
+                        </label>
+                        <select
+                          id="registerCareer"
+                          class="form-control"
+                          required
+                        >
+                          <option value="">Seleccione una carrera</option>
+                        </select>
+                      </div>
+                      <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="registerStudentBtn"
+                      >
+                        <i class="fas fa-save btn-icon"></i> Registrar
+                        Estudiante
+                      </button>
+                    </form>
+                    <div id="registerResult" class="mt-6"></div>
+                  </div>
+                </div>
+
+                <!-- Sección de Búsqueda -->
+                <div class="card">
+                  <div class="card-header">
+                    <h2><i class="fas fa-search"></i> Buscar Estudiantes</h2>
+                  </div>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="searchType" class="form-label">
+                        <i class="fas fa-filter"></i> Tipo de Búsqueda
+                      </label>
+                      <select id="searchType" class="form-control">
+                        <option value="id">Por ID</option>
+                        <option value="career">Por Carrera</option>
+                      </select>
+                    </div>
+
+                    <div id="idSearchGroup" class="form-group">
+                      <label for="studentId" class="form-label">
+                        <i class="fas fa-id-badge"></i> ID del Estudiante
+                      </label>
+                      <input
+                        type="number"
+                        id="studentId"
+                        class="form-control"
+                        placeholder="Ej: 1001"
+                      />
+                    </div>
+
+                    <div
+                      id="careerSearchGroup"
+                      class="form-group"
+                      style="display: none"
+                    >
+                      <label for="careerFilter" class="form-label">
+                        <i class="fas fa-graduation-cap"></i> Carrera
+                      </label>
+                      <select id="careerFilter" class="form-control">
+                        <option value="">Todas las carreras</option>
+                      </select>
+                    </div>
+
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      id="searchBtn"
+                    >
+                      <i class="fas fa-search btn-icon"></i> Buscar
+                    </button>
+
+                    <div
+                      id="searchResults"
+                      class="mt-6 grid grid-cols-1 gap-4"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Sección de Eliminación -->
+                <div class="card">
+                  <div class="card-header">
+                    <h2>
+                      <i class="fas fa-trash-alt"></i> Eliminar Estudiante
+                    </h2>
+                  </div>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="deleteId" class="form-label">
+                        <i class="fas fa-id-badge"></i> ID del Estudiante
+                      </label>
+                      <input
+                        type="number"
+                        id="deleteId"
+                        class="form-control"
+                        placeholder="Ej: 1001"
+                      />
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-danger"
+                      id="deleteStudentBtn"
+                    >
+                      <i class="fas fa-trash btn-icon"></i> Eliminar Estudiante
+                    </button>
+                    <div id="deleteResult" class="mt-6"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Modal para asignar carrera -->
+      <div id="assignCareerModal" class="modal hidden">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3><i class="fas fa-graduation-cap"></i> Asignar Carrera</h3>
+            <button id="closeAssignCareerModal" class="close">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="assignStudentName" class="form-label"
+                >Estudiante</label
+              >
+              <input
+                type="text"
+                id="assignStudentName"
+                class="form-control"
+                readonly
+              />
+              <input type="hidden" id="assignStudentId" />
+            </div>
+            <div class="form-group">
+              <label for="assignCareerSelect" class="form-label">Carrera</label>
+              <select id="assignCareerSelect" class="form-control" required>
+                <option value="">Seleccione una carrera</option>
+              </select>
+            </div>
+            <div id="assignCareerMessage"></div>
+          </div>
+          <div class="modal-footer">
+            <button id="closeAssignCareerModal2" class="btn btn-danger">
+              <i class="fas fa-times"></i> Cancelar
+            </button>
+            <button id="assignCareerBtn" class="btn btn-primary">
+              <i class="fas fa-graduation-cap"></i> Asignar Carrera
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="social-links">
+              <a href="#" class="social-link" title="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link" title="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-link" title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link" title="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-link" title="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+            <p>© 2025 Instituto Profesional. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
